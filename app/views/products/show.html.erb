@@ -17,7 +17,7 @@
     <div>库存：<%= @product.quantity %> 件</div>
     <div class="product-price">￥ <%= @product.price %></div>
     <div class="pull-right">
-      <%= link_to("加入购物车", "#", class: "btn btn-success btn-lg") %>
+      <%= link_to("加入购物车", add_to_cart_product_path(@product), class: "btn btn-success btn-lg") %>
     </div>
   </div>
 </div>
