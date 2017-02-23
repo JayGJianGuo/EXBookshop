@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-12">
 
-    <h2>购物车</h2>
+    <h2 style="color: #267F68;">购物车</h2>
     <%= link_to("清空购物车", clean_carts_path, method: :delete, class: "btn btn-warning pull-right",
                             style: "text-decoration: underline;",
                             data: { confirm: "你确定要清空购物车吗？"}) %>
@@ -9,7 +9,8 @@
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th colspan='2' class="col-md-6">商品详情</th>
+          <th class="col-md-4">商品图片</th>
+          <th class="col-md-2">名称</th>
           <th class='col-md-2'>单价</th>
           <th class='col-md-2'>数量</th>
           <th class='col-md-2'>操作选项</th>
@@ -27,6 +28,7 @@
               <% end %>
             <% end %>
           </td>
+
           <td class='col-md-2'>
             <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
           </td>
@@ -34,10 +36,11 @@
             <%= cart_item.product.price %>
           </td>
           <td>
-            <%= form_for cart_item, url: cart_item_path(cart_item.product_id) do |f| %>
-              <%= f.select :quantity, 1..cart_item.product.quantity %>
-              <%= f.submit "更新", data: { disabel_with: "上传中……"} %>
-            <% end %>
+            <div class="countNumber">
+              <%= link_to("-", remove_quantity_cart_item_path(cart_item.product_id), class: "countNumber-btn countNumber-btn-sub", method: :post) %>
+              <input class="countNumber-input" type="text" value="<%= cart_item.quantity %>">
+              <%= link_to("+", add_quantity_cart_item_path(cart_item.product_id), class: "countNumber-btn countNumber-btn-plus", method: :post) %>
+            </div>
           </td>
           <td>
             <%= link_to cart_item_path(cart_item.product_id), method: :delete do %>
