@@ -1,10 +1,154 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.bg1 {
+  background-color: #F2F7EF;
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
+/*5种背景颜色*/
+.bg-color1 {
+  background: #50514F;
+}
+
+.bg-color2 {
+  background: #F25F5C;
+}
+
+.bg-color3 {
+  background: #FFE066;
+}
+
+.bg-color4 {
+  background: #247BA0;
+}
+
+.bg-color5 {
+  background: #70C1B3;
+}
+
+.carousel {
+  background-image:url('https://ww3.sinaimg.cn/large/006tKfTcgy1fd0j900rxwj31400m8toy.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 110px;
+}
+
+.title {
+  font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+  text-align: center;
+  color: white;
+}
+
+.slogan {
+  text-align: center;
+  color: white;
+  top: 12px;
+}
+
+.lead {
+  text-align: center;
+  color: white;
+}
 
 
-.demo {
-  font-size: 36px; /*设置字体36px*/
-  color: #C81623; /*红色*/
-  text-decoration: none; /*不要下划线*/
+.btn-danger {
+    color: #fff;//字体颜色
+    background-color: #00CC96;//背景颜色
+    border-color: #00CC96;//边框颜色
+}
+
+.btn-danger:hover {
+    background-color: #E65100;//鼠标放置在btn上的背景颜色
+    border-color: #E65100;//鼠标放置在btn上的边框颜色
+}
+
+/*头部*/
+.header {
+  width: 1200px;
+  margin: 20px auto;
+}
+
+.headerContent {
+  height: 60px;
+}
+
+.headerContent-item {
+  height: 60px;
+}
+
+.headerContent-item1 {
+  float: left;
+  width: 180px;
+  margin-right: 180px;
+}
+
+.headerContent-item2 {
+  float: left;
+  width: 400px;
+}
+
+.headerContent-item3 {
+  float: right;
+  width: 150px;
+}
+效果：
+
+/*菜单*/
+.menu {
+  width: 100%;
+}
+
+.menuList {
+  width: 1200px;
+  margin: 20px auto;
+  height: 42px;
+}
+
+.menuList-item {
+  float: left;
+  width: 108px;
+  height: 42px;
+}
+
+/*轮播图*/
+.carousel{
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.carousel > img {
+  width: 1440px;
+  height: 800px;
+}
+
+/*排序*/
+.orderList {
+  margin: 10px auto;  /*top right bottom left*/
+  width: 1200px;
+  overflow: hidden;
+}
+
+.orderList-item {
+  float: left;
+  width: 108px;
+  height: 42px;
+}
+.productList {
+  margin: 50px auto;
+  width: 1200px;
+  overflow: hidden;
+}
+
+.productList-item {
+  float: left;
+  width: 228px;
+  height: 250px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+.productList-lastItem {
+  margin-right: 0;
 }

@@ -16,3 +16,129 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+
+/*导航栏*/
+@media (min-width: 768px) {
+    .navbar .footer .alert{
+        border-radius: 0;//圆角为0
+    }
+}
+
+
+.navbar {
+  width: 100%; /*铺满*/
+}
+
+.navbar-brand > img {
+    display: inline-block;	//图片和链接文字显示在同一行
+    margin-right: 10px; //图片和链接文字拉开一点距离
+    width: 32px; //定制图片宽度
+    height: 32px; //定制图片高度
+}
+
+
+.navbar-default {
+    background-color: #FFFFFF;//背景颜色
+    border-color: #212121;//边框色
+    margin-bottom: 0;//底部 margin 不撑开距离
+    height: 56px;
+    border-top: 2px solid #8B8B8B;
+    border-bottom: 1px solid #EDEDED;
+}
+
+.navbar-default .navbar-brand {
+   color: #4E4E4E;//字体颜色
+   padding: 10px 15px;//上下10px,左右15px
+   line-height: 30px;//文字行高
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #8EEDB3;//鼠标放置在链接上的文字颜色
+  background-color: transparent;//鼠标放置在链接上的背景颜色，这里设为透明
+}
+
+.navbar-default .navbar-nav > li > a{
+  color: #939798;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #8EEDB3;
+  background-color: transparent;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #8EEDB3;
+  background-color: #CEFFC0;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > a:hover {
+    background-color: #CEFFC0;
+    color: #212121;
+}
+
+.nav-main {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+
+
+.navbar-wrap {
+  height: 30px; /*设置高度*/
+  line-height: 30px; /*设置行高，实现垂直居中，口诀「如果高度等于行高，那就实现了文本的垂直居中」*/
+  color: #717171; /*字体颜色*/
+}
+
+.navbar-wrap a {
+  color: #717171; /*文字的颜色*/
+  text-decoration: none; /*不要下划线啦，好丑*/
+}
+.navbar-wrap a:hover {
+  color: #C81623; /*鼠标一上去的时候，字体变成红色*/
+}
+
+.navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse {
+    max-height: 340px;
+}
+
+.alert {
+  margin: 0;
+}
+
+/*页尾*/
+
+.footer {
+    display: block;
+    max-width: 100%;
+    background: #54A26A;
+    height: 120px;
+
+    border-bottom: 2px solid #2D5739;
+}
+
+.footer {
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20px;
+}
+
+.active {
+  background-color: #73AEEA;
+}
+
+
+small {
+    display: block;
+    margin-bottom: 6px;
+    color: #FFFFFF;
+    font-size: 17px;
+}
