@@ -9,7 +9,7 @@
 
 /*5种背景颜色*/
 .bg-color1 {
-  background: #50514F;
+  background: #fff;
 }
 
 .bg-color2 {
@@ -33,83 +33,103 @@
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 110px;
+  height: 580px;
 }
 
-.title {
-  font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
-  text-align: center;
-  color: white;
+.title{
+  text-align: left;;//文字左对齐
+  color: #478859;	//字体颜色
+  padding: 50px 20px 0;//上50px，左右20px，下0
+  background-color: rgba(250, 250, 250, 0.39);//背景颜色含透明度
+  width: 400px;
+  margin: 150px auto 0;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .slogan {
-  text-align: center;
+  font-family: "Helvetica Neue", "Microsoft Yahei";
+  text-align: right;;
   color: white;
-  top: 12px;
+  background-color: rgba(250, 250, 250, 0.39);//背景颜色含透明度
+  width: 400px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 26px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
+
 
 .lead {
+  background-color: rgba(250, 250, 250, 0.39);//背景颜色含透明度
+  width: 600px;
   text-align: center;
+  margin-top: 20px auto;
+  color: white;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.btn-lg, .btn-group-lg > .btn {
+    padding: 8px 16px;//通过padding来决定btn的大小
+    letter-spacing: 3px;//调整文字间距
+    border-radius: 10px;//btn圆角
+    width: 199px;//这里用指定宽度把btn拉得更长
+}
+
+.btn-success {
+  color: #fff;//字体颜色
+  background-color: #439439;//背景颜色
+  border-color: #439439;//边框颜色
+  font-size: 25px;
+  padding: 4px 25px;
+  margin: 20px auto;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.btn-success:hover {
+  background: #75C44B !important;//鼠标放置在btn上的背景颜色
+  border-color: #75C44B;//鼠标放置在btn上的边框颜色
+  border: 1px solid #75C44B;
+  color: #fff !important;
+
+}
+
+.header-bottom {
+  height: 220px;
+  width: 100%;
   color: white;
 }
 
-
-.btn-danger {
-    color: #fff;//字体颜色
-    background-color: #00CC96;//背景颜色
-    border-color: #00CC96;//边框颜色
+#header-bottom {
+  background-color: #EEEEEE;
 }
 
-.btn-danger:hover {
-    background-color: #E65100;//鼠标放置在btn上的背景颜色
-    border-color: #E65100;//鼠标放置在btn上的边框颜色
+.header-btn {
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-/*头部*/
-.header {
-  width: 1200px;
-  margin: 20px auto;
-}
-
-.headerContent {
-  height: 60px;
-}
-
-.headerContent-item {
-  height: 60px;
-}
-
-.headerContent-item1 {
-  float: left;
-  width: 180px;
-  margin-right: 180px;
-}
-
-.headerContent-item2 {
-  float: left;
-  width: 400px;
-}
-
-.headerContent-item3 {
-  float: right;
-  width: 150px;
-}
-效果：
-
-/*菜单*/
-.menu {
-  width: 100%;
-}
-
-.menuList {
-  width: 1200px;
-  margin: 20px auto;
-  height: 42px;
-}
-
-.menuList-item {
-  float: left;
-  width: 108px;
-  height: 42px;
+.header-btn p {
+  font-size: 22px;
+  color: #4BB80F;
+  margin-bottom: 15px;
+  padding-top: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 /*轮播图*/
@@ -123,32 +143,42 @@
   height: 800px;
 }
 
-/*排序*/
-.orderList {
-  margin: 10px auto;  /*top right bottom left*/
-  width: 1200px;
-  overflow: hidden;
+#body {
+  padding-bottom: 75%;
 }
 
-.orderList-item {
-  float: left;
-  width: 108px;
-  height: 42px;
-}
-.productList {
-  margin: 50px auto;
-  width: 1200px;
-  overflow: hidden;
+#bodyitem {
+  margin:50px 50px 50px 50px;
+  height: 300px;
+  width: 1006px;
+  padding: 0;
 }
 
-.productList-item {
-  float: left;
-  width: 228px;
-  height: 250px;
-  margin-right: 15px;
-  margin-bottom: 15px;
+#bodyitem-left {
+  width: 300px;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  > a {
+      > img {
+      width:300px;
+      height: 294px;
+      background-color: #EEEEEE;
+    }
+  }
 }
 
-.productList-lastItem {
-  margin-right: 0;
+#bodyitem-right {
+  width: 700px;
+  height: 100%;
+  padding: 0;
+  > img {
+    width: 700px;
+    height: 294px;
+  }
+}
+
+#body-ps {
+  padding: 0;
+  margin: 0;
 }

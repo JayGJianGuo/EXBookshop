@@ -21,25 +21,28 @@
   </div>
 
   <div class="col-md-7">
-      <div class="col-xs-7">
+    <div class="row">
+      <div class="col-md-9 col-xs-9">
         <h2><%= @product.title %></h2>
         <div style="height:100px;">
-          <p>
+          <p style="height:200px;">
             <%= @product.description %>
           </p>
         </div>
         <div>库存：<%= @product.quantity %> 件</div>
         <div class="product-price">￥ <%= @product.price %></div>
       </div>
+    </div>
       <br>
-      <div class="col-xs-5 pull-right">
-        <% if @product.quantity.present? && @product.quantity > 0 %>
-          <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post, class: "btn btn-success btn-lg") %>
-        <% else %>
-          <button class="btn btn-lg btn-default" disabled, style="color: #BA3E35;">已销售一空，无法购买</button>
-        <% end %>
+      <div class="row">
+        <div class="col-xs-3 col-md-3 pull-right">
+          <% if @product.quantity.present? && @product.quantity > 0 %>
+            <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post, class: "btn btn-success btn-lg fa fa-cart-plus") %>
+          <% else %>
+            <button class="btn btn-lg btn-default" disabled, style="color: #BA3E35;">已销售一空，无法购买</button>
+          <% end %>
+        </div>
       </div>
-
   </div>
 
 </div>
