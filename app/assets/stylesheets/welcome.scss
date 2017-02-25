@@ -79,11 +79,11 @@
   padding-right: 20px;
 }
 
-.btn-lg, .btn-group-lg > .btn {
+.btn-lg, .btn-group-lg .btn {
     padding: 8px 16px;//通过padding来决定btn的大小
     letter-spacing: 3px;//调整文字间距
     border-radius: 10px;//btn圆角
-    width: 199px;//这里用指定宽度把btn拉得更长
+    width: auto;//这里用指定宽度把btn拉得更长
 }
 
 .btn-success {
