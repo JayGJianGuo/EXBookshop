@@ -1,5 +1,5 @@
 <div class="productDetail">
-  
+
   <div class="container">
     <div class="col-md-5">
       <div class="productDetail-left">
@@ -27,7 +27,8 @@
           <h2><%= @product.title %></h2>
           <div style="height:100px;">
             <p style="height:200px;">
-              <%= @product.description %>
+              <%= simple_format(@product.description) %>
+
             </p>
           </div>
           <div>库存：<%= @product.quantity %> 件</div>

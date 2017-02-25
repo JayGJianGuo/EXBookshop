@@ -19,7 +19,7 @@
 
       </div>
       <h2><%= @group.title %></h2>
-      <p><%= @group.description %></p>
+      <p><%= simple_format(@group.description) %></p>
 
       <table class="table">
         <thead>
