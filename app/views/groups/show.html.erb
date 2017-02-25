@@ -2,9 +2,13 @@
   <div class="container">
     <div class="col-md-12">
       <div class="group">
+
         <% if current_user && current_user == @group.user %>
           <%= link_to("编辑", edit_group_path(@group), class: "btn btn-primary pull-right")%>
         <% end %>
+
+        <%= link_to("发表心得", new_group_post_path(@group), class: "btn btn-default pull-right")%>
+
       </div>
       <h2><%= @group.title %></h2>
       <p><%= @group.description %></p>
