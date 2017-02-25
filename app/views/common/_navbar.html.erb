@@ -50,6 +50,10 @@
             <%= link_to(content_tag(:i, "我的群组", class: "fa fa-users"), account_groups_path) %>
           </li>
 
+          <li>
+            <%= link_to(content_tag(:i, "我的文章", class: "fa fa-paperclip"), account_posts_path) %>
+          </li>
+
           <li> <%= link_to(content_tag(:i, "登出", class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
 
           </ul>
