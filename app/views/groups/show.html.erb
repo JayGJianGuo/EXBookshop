@@ -2,7 +2,13 @@
   <div class="container">
     <div class="col-md-12">
       <div class="group">
-
+        <span>
+          <% if current_user && current_user.is_member_of?(@group) %>
+            <label class="label label-success">群组成员</label>
+          <% else %>
+            <label class="label labe-warning">不是群组成员</label>
+          <% end %>
+        </span>
         <% if current_user && current_user == @group.user %>
           <%= link_to("编辑", edit_group_path(@group), class: "btn btn-primary pull-right")%>
         <% end %>
