@@ -2,18 +2,9 @@
   <div class="container">
     <div class="col-md-4 col-md-offset-4">
     <h2>编辑讨论组</h2>
-    <%= simple_form_for @group do |f|%>
+    <hr>
 
-      <div class="group">
-        <%= f.input :title, label: "讨论组名称" %>
-      </div>
-      <div class="group">
-        <%= f.input :description, label: "介绍" %>
-      </div>
-
-      <%= f.submit "提交", class: "btn btn-primary pull-right", data: { disable_with: "上传中……" } %>
-
-    <% end %>
+    <%= render "simple_form" %>
     </div>
   </div>
 </div>
