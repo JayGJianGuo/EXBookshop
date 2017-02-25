@@ -2,11 +2,13 @@
   <div class="container">
     <div class="col-md-12">
       <div class="group">
-        <span>
+        <span class="pull-right">
           <% if current_user && current_user.is_member_of?(@group) %>
             <label class="label label-success">群组成员</label>
+            <%= link_to("退出群组", quit_group_path(@group), method: :post, class: "btn btn-warning") %>
           <% else %>
-            <label class="label labe-warning">不是群组成员</label>
+            <label class="label label-warning"> 不是群组成员 </label>
+            <%= link_to("进入群组", join_group_path(@group), method: :post, class: "btn btn-info") %>
           <% end %>
         </span>
         <% if current_user && current_user == @group.user %>
