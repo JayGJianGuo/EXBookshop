@@ -27,6 +27,7 @@
 
 .navbar {
   width: 100%; /*铺满*/
+  margin-bottom: 0;
 }
 
 .navbar-brand > img {
@@ -40,7 +41,6 @@
 .navbar-default {
     background-color: #FFFFFF;//背景颜色
     border-color: #212121;//边框色
-    margin-bottom: 25px;//底部 margin 不撑开距离
     height: 56px;
     border-top: 2px solid #8B8B8B;
     border-bottom: 1px solid #EDEDED;
@@ -103,11 +103,21 @@
 }
 
 .navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse {
-    max-height: 340px;
+  max-height: 340px;
 }
 
 .alert {
   margin: 0;
+}
+
+.header-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.header-navbar {
+  height: 82px;
 }
 
 /*页尾*/
@@ -162,11 +172,9 @@
     }
 }
 
-
-.header-fixed {
-  position: fixed;
-  top: 0;
-  left: 0;
+/*大标题*/
+.title-cl-1 {
+  color: #267F68;
 }
 
 

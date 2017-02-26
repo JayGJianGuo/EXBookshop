@@ -133,6 +133,10 @@
   padding-right: 20px;
 }
 
+.header-placeholder {
+  height: 100px;
+}
+
 /*轮播图*/
 .carousel{
   padding-left: 0;
@@ -144,19 +148,15 @@
   height: 800px;
 }
 
-#body {
-  padding-bottom: 75%;
+.body {
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
-#bodyitem {
-  margin:50px 50px 50px 50px;
-  height: 300px;
-  width: 1006px;
-  padding: 0;
-}
 
 #bodyitem-left {
   width: 300px;
+
   height: 100%;
   padding: 0;
   border: 0;

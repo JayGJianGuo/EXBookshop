@@ -18,9 +18,9 @@
         <%= link_to("发表心得", new_group_post_path(@group), class: "btn btn-default pull-right")%>
 
       </div>
-      <h2><%= @group.title %></h2>
+      <h2 class="title-cl-1"><%= @group.title %></h2>
       <p><%= simple_format(@group.description) %></p>
-
+       <hr>
       <table class="table">
         <thead>
           <tr>
