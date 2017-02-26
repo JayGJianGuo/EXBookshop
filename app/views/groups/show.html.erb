@@ -24,6 +24,7 @@
       <table class="table">
         <thead>
           <tr>
+            <th>#</th>
             <th>文章标题</th>
             <th>文章内容</th>
             <th>发表者</th>
@@ -33,7 +34,8 @@
         <tbody>
           <% @posts.each do |post| %>
             <tr>
-              <td><%= post.title %></td>
+              <td><%= post.id %></td>
+              <td><%= link_to(post.title, group_post_path(@group, post)) %></td>
               <td><%= post.content %></td>
               <td><%= post.user.email %></td>
               <td><%= post.created_at.to_s(:long) %></td>
