@@ -20,3 +20,11 @@ u.password = '123456'
 u.password_confirmation = "123456"
 u.is_admin = true
 u.save
+
+create_products = for i in 1..10 do
+  Product.create!([title: "Book no.#{i}",
+                   description: "這是用種子建立的第 #{i} 個商品",
+                   price: rand(19.99..99.99),
+                   quantity: rand(1..10)*10])
+end
+puts "10 Product books created."
