@@ -8,7 +8,7 @@
 
 
 u = User.new
-u.email = "jkland927@hotmal.com"
+u.email = "jkland927@hotmail.com"
 u.password = '112233'
 u.password_confirmation = "112233"
 u.is_admin = true
