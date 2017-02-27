@@ -1,26 +1,37 @@
 <div class="row">
   <div class="container">
     <div class="col-md-12">
-      <div class="group">
-        <span class="pull-right">
-          <% if current_user && current_user.is_member_of?(@group) %>
-            <label class="label label-success">群组成员</label>
-            <%= link_to("退出群组", quit_group_path(@group), method: :post, class: "btn btn-warning") %>
-          <% else %>
-            <label class="label label-warning"> 不是群组成员 </label>
-            <%= link_to("进入群组", join_group_path(@group), method: :post, class: "btn btn-info") %>
-          <% end %>
-        </span>
-        <% if current_user && current_user == @group.user %>
-          <%= link_to("编辑", edit_group_path(@group), class: "btn btn-primary pull-right")%>
-        <% end %>
+      <div class="row">
 
-        <%= link_to("发表心得", new_group_post_path(@group), class: "btn btn-default pull-right")%>
+        <div class="col-md-6 group pull-left">
+          <h2 class="title-cl-1"><%= @group.title %></h2>
+          <p><%= simple_format(@group.description) %></p>
+          <br>
+          <span>
+            <% if current_user && current_user.is_member_of?(@group) %>
+              <label class="label label-success">群组成员</label>
+              <%= link_to("退出群组", quit_group_path(@group), method: :post, class: "btn btn-warning") %>
+            <% else %>
+              <label class="label label-warning"> 不是群组成员 </label>
+              <%= link_to("进入群组", join_group_path(@group), method: :post, class: "btn btn-info") %>
+            <% end %>
+          </span>
+        </div>
+
+        <div class="col-md-6 group pull-right">
+
+          <% if current_user && current_user == @group.user %>
+            <%= link_to("编辑", edit_group_path(@group), class: "btn btn-primary")%>
+          <% end %>
+          <span> </span>
+          <%= link_to("读书心得", new_group_post_path(@group), class: "btn btn-info fa fa-plus-circle")%>
+
+        </div>
 
       </div>
-      <h2 class="title-cl-1"><%= @group.title %></h2>
-      <p><%= simple_format(@group.description) %></p>
-       <hr>
+
+
+
       <table class="table">
         <thead>
           <tr>

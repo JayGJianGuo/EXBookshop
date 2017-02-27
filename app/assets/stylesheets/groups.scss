@@ -1,3 +1,12 @@
 // Place all the styles related to the groups controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.btn {
+  padding: 6px 12px;//通过padding来决定btn的大小
+  letter-spacing: 1px;//调整文字间距
+  border-radius: 5px;//btn圆角
+  width: auto;//这里用指定宽度把btn拉得更长
+  font-size: 25px;
+}
