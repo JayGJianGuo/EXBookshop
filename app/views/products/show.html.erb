@@ -5,11 +5,19 @@
       <div class="productDetail-left">
 
         <div class="productDetail-left-bigImage">
-            <% if @product.image.present? %>
-              <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
-            <% else %>
-              <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-            <% end %>
+         <% if @photos.present? %>
+           <% @photos.each_with_index do |p, index| %>
+             <% if index == 0 %>
+               <%= image_tag p.avatar.medium.url %>
+               <div style="letter-spacing: -8px">
+             <% else %>
+               <%= image_tag p.avatar.thumb.url %>
+             <% end %>
+           <% end %>
+           </div>
+         <% else %>
+             <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+         <% end %>
         </div>
         <div class="productDetail-left-imageList">
           <div class="productDetail-left-imageList-item bg-color4"></div>
