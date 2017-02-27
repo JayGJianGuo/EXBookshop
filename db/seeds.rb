@@ -8,7 +8,7 @@
 
 
 u = User.new
-u.email = "admin@test.com"
+u.email = "jkland927@hotmal.com"
 u.password = '112233'
 u.password_confirmation = "112233"
 u.is_admin = true
@@ -28,3 +28,8 @@ create_products = for i in 1..10 do
                    quantity: rand(1..10)*10])
 end
 puts "10 Product books created."
+
+Product.create!([title: "人类简史",
+                 description: "尤瓦尔·赫拉利",
+                 quantity: rand(1..10*10),
+                 price: "41.11",])
