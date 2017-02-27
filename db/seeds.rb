@@ -26,3 +26,21 @@ Product.create!([title: "人类简史",
                  description: "尤瓦尔·赫拉利",
                  quantity: rand(1..10*10),
                  price: "41.11",])
+
+Group.create!([title: "《好好学习》精进组",
+               description: "成甲",
+               user_id: 1])
+
+Post.create!([title: "临界知识",
+              content: "那些能让你升级的知识",
+              group_id: 1,
+              user_id: 1, ])
+
+Group.create!([title: "《好好说话》实践组",
+               description: "马东",
+               user_id: 2])
+
+Post.create!([title: "你会好好说话吗？",
+              content: "你试试你怎么知道",
+              group_id: 2,
+              user_id: 2, ])

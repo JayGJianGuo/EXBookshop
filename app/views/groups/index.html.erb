@@ -36,7 +36,7 @@
                               method: :delete, data: { confirm: "Are you sure?" } )%>
                 </div>
                 <% else %>
-                  <%= link_to("请先登录", groups_path, class: "btn btn-defult") %>
+                  <%= link_to("您没有权限！", groups_path, class: "btn btn-defult") %>
                 <% end %>
               </td>
             </tr>
