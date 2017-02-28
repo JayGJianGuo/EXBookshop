@@ -1,7 +1,7 @@
 <div class="productDetail">
 
   <div class="container">
-    <div class="col-md-5">
+    <div class="col-md-4 col-xs-4">
       <div class="productDetail-left">
 
         <div class="productDetail-left-bigImage">
@@ -19,33 +19,35 @@
              <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
          <% end %>
         </div>
-        <div class="productDetail-left-imageList">
-          <div class="productDetail-left-imageList-item bg-color4"></div>
-          <div class="productDetail-left-imageList-item bg-color4"></div>
-          <div class="productDetail-left-imageList-item bg-color4"></div>
-          <div class="productDetail-left-imageList-item bg-color4"></div>
-          <div class="productDetail-left-imageList-item bg-color4 productDetail-left-imageList-lastItem"></div>
-        </div>
+
       </div>
     </div>
 
-    <div class="col-md-7">
-      <div class="row">
-        <div class="col-md-9 col-xs-9">
-          <h2><%= @product.title %></h2>
-          <div style="height:100px;">
-            <p style="height:200px;">
+    <div class="col-md-8 col-xs-8">
+
+          <div class="row">
+            <h2 class="title-cl-1"><%= @product.title %></h2>
+          </div>
+
+          <div style="row">
+            <p>
               <%= simple_format(@product.description) %>
 
             </p>
           </div>
-          <div>库存：<%= @product.quantity %> 件</div>
-          <div class="product-price">￥ <%= @product.price %></div>
-        </div>
-      </div>
+
+          <div class="row">
+            库存：<%= @product.quantity %> 件
+          </div>
+
+          <div class="row product-price">
+            ￥ <%= @product.price %>
+          </div>
+
         <br>
+
         <div class="row">
-          <div class="col-xs-3 col-md-3 pull-right">
+          <div class="pull-right">
             <% if @product.quantity.present? && @product.quantity > 0 %>
               <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post, class: "btn btn-success btn-lg fa fa-cart-plus") %>
             <% else %>
@@ -53,6 +55,7 @@
             <% end %>
           </div>
         </div>
+
     </div>
   </div>
 </div>
