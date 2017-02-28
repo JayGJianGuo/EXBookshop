@@ -15,7 +15,7 @@ u.is_admin = true
 u.save
 
 u = User.new
-u.email = "cyj@test.com"
+u.email = "irischen6688@163.com"
 u.password = '123456'
 u.password_confirmation = "123456"
 u.is_admin = true
@@ -27,18 +27,26 @@ Product.create!([title: "人类简史",
                  quantity: rand(1..10*10),
                  price: "41.11",])
 
+#产生
 Group.create!([title: "《好好学习》精进组",
                description: "成甲",
                user_id: 1])
+
+Group.create!([title: "《好好说话》实践组",
+              description: "马东",
+              user_id: 2])
 
 Post.create!([title: "临界知识",
               content: "那些能让你升级的知识",
               group_id: 1,
               user_id: 1, ])
 
-Group.create!([title: "《好好说话》实践组",
-               description: "马东",
-               user_id: 2])
+create_posts = for i in 1..10 do
+  Post.create!([title: "Post no.#{i+10}",
+                content: "這是用種子建立的第 #{i+10} 個文章",
+                group_id: rand(1..2),
+                user_id: rand(1..2)])
+end
 
 Post.create!([title: "你会好好说话吗？",
               content: "你试试你怎么知道",
