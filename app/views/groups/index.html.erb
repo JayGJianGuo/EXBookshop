@@ -17,6 +17,7 @@
             <th>组名</th>
             <th>简介</th>
             <th>创建者</th>
+            <th> 创建时间 </th>
           </tr>
         </thead>
         <tbody>
@@ -26,6 +27,7 @@
               <td><%= link_to(group.title, group_path(group)) %></td>
               <td><%= simple_format(group.description) %></td>
               <td><%= group.user.email %></td>
+              <td><%= group.created_at.to_s(:long) %></td>
             </tr>
           <% end %>
         </tbody>
