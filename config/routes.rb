@@ -57,4 +57,6 @@ Rails.application.routes.draw do
     end
     resources :posts
   end
+
+  resources :exbooks
 end
