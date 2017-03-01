@@ -10,7 +10,8 @@ class ExbooksController < ApplicationController
 
   def add_to_list
     @exbook = Exbook.find(params[:id])
+    current_list.add_exbook_to_list(@exbook)
+    flash[:notice] = "成功加入心愿单"
     redirect_to :back
-    flash[:notice] = "test"
   end
 end

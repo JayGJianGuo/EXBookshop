@@ -3,9 +3,9 @@ class List < ApplicationRecord
    has_many :exbooks, through: :list_items, source: :exbook
 
    def add_exbook_to_list(exbook)
-     ci = list_items.build
-     ci.exbook = exbook
-     ci.quantity = 1
-     ci.save
+     li = list_items.build
+     li.exbook = exbook
+     li.quantity = 1
+     li.save
    end
 end

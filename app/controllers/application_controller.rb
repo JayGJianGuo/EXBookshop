@@ -8,9 +8,14 @@ class ApplicationController < ActionController::Base
   end
 
     helper_method :current_cart
+    helper_method :current_list
 
     def current_cart
       @current_cart ||= find_cart
+    end
+
+    def current_list
+      @current_list ||= find_list
     end
 
     private
@@ -23,4 +28,14 @@ class ApplicationController < ActionController::Base
       session[:cart_id] = cart.id
       return cart
     end
+
+    def find_list
+      list = List.find_by(id: session[:list_id])
+      if list.blank?
+        list = List.create
+      end
+      session[:list_id] = list.id
+      return list
+    end
+    
 end
