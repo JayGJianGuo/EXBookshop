@@ -1,6 +1,43 @@
-<ul>
-  <% @exbooks.each do |exbook| %>
+<h2>Exbook列表</h2>
+<div class="pull-right" style="padding-bottom: 20px;">
+  <%= link_to("新增产品", new_admin_exbook_path, class:'btn btn-primary btn-sm') %>
+</div>
 
-    <li> <%= link_to(exbook.title, admin_exbook_path(exbook)) %> </li>
-  <% end %>
-</ul>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th width='220'>图片</th>
+      <th>书名</th>
+      <th>类型</th>
+      <th width='150'>操作选项</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @exbooks.each do |exbook| %>
+    <tr>
+      <td><%= exbook.id %></td>
+      <td>
+        <%= link_to exbook_path(exbook) do %>
+          <% if exbook.photos.present? %>
+            <%= image_tag(exbook.photos[0].avatar.thumb.url, class: "thumbnail") %>
+          <% else %>
+            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+          <% end %>
+        <% end %>
+      </td>
+      <td><%= exbook.title %></td>
+      <td><%= exbook.booktype %></td>
+      <td>
+
+        <div class="btn-group-vertical" role="group">
+          <%= link_to("编辑", edit_admin_exbook_path(exbook), class: "btn btn-primary text-center") %>
+          <%= link_to("删除", admin_exbook_path(exbook), method: :delete, class: "btn btn-danger text-center") %>
+        </div>
+
+
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -43,12 +43,15 @@
 
           <% if current_user.admin? %>
             <li>
-              <%= link_to(content_tag(:i, "商家后台", class: "fa fa-database"), admin_products_path) %>
+              <%= link_to(content_tag(:i, "商家后台", class: "fa fa-list-ul"), admin_products_path) %>
+            </li>
+            <li>
+              <%= link_to(content_tag(:i, "书架后台", class: "fa fa-book"), admin_exbooks_path) %>
             </li>
           <% end %>
 
           <li>
-            <%= link_to(content_tag(:i, "订单列表", class: "fa fa-list-ul"), account_orders_path) %>
+            <%= link_to(content_tag(:i, "订单列表", class: "fa fa-shopping-basket"), account_orders_path) %>
           </li>
 
           <li>
