@@ -26,7 +26,7 @@
       <div> 可交换数量 : <%= @exbook.quantity %> </div>
       <div class="exbook-type"> | <%= @exbook.booktype %> </div>
       <div class="pull-right">
-        <%= link_to("加入心愿单", "#", :class => "btn btn-primary btn-lg btn-danger") %>
+        <%= link_to("加入心愿单", add_to_list_exbook_path(@exbook), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
       </div>
       </div>
   </div>

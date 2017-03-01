@@ -7,4 +7,10 @@ class ExbooksController < ApplicationController
     @exbook = Exbook.find(params[:id])
     @photos = @exbook.photos.all
   end
+
+  def add_to_list
+    @exbook = Exbook.find(params[:id])
+    redirect_to :back
+    flash[:notice] = "test"
+  end
 end

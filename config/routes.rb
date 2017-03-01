@@ -58,5 +58,9 @@ Rails.application.routes.draw do
     resources :posts
   end
 
-  resources :exbooks
+  resources :exbooks do
+    member do
+      post :add_to_list
+    end
+  end
 end
