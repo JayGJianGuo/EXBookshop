@@ -1,11 +1,19 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-6 col-md-6">
-      <% if @exbook.image.present? %>
-        <%= image_tag(@exbook.image.medium.url, class: "thumbnail") %>
-      <% else %>
-        <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-      <% end %>
+      <% if @photos.present? %>
+       <% @photos.each_with_index do |p, index| %>
+         <% if index == 0 %>
+           <%= image_tag p.avatar.medium.url %>
+           <div style="letter-spacing: -8px">
+         <% else %>
+           <%= image_tag p.avatar.thumb.url %>
+         <% end %>
+       <% end %>
+       </div>
+     <% else %>
+         <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+     <% end %>
     </div>
 
     <div class="col-xs-6 col-md-6">

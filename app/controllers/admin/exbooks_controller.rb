@@ -11,11 +11,17 @@ class Admin::ExbooksController < ApplicationController
 
   def new
     @exbook = Exbook.new
+    @photo = @exbook.photos.build #for multi-pics
   end
 
   def create
     @exbook = Exbook.new(exbook_params)
     if @exbook.save
+      if params[:photos] != nil
+        params[:photos]['avatar'].each do |a|
+          @photo = @exbook.photos.create(:avatar => a)
+        end
+      end
       redirect_to admin_exbooks_path
     else
       render :new
@@ -27,8 +33,19 @@ class Admin::ExbooksController < ApplicationController
   end
 
   def update
-    @exbook = Exbook.find(params[:id])
-    if @exbook.update(exbook_params)
+    @exbook = exbook.find(params[:id])
+
+    if params[:photos] != nil
+      @exbook.photos.destroy_all #need to destroy old pics first
+
+      params[:photos]['avatar'].each do |a|
+        @picture = @exbook.photos.create(:avatar => a)
+      end
+
+      @exbook.update(exbook_params)
+      redirect_to admin_exbooks_path
+
+    elsif @exbook.update(exbook_params)
       redirect_to admin_exbooks_path
     else
       render :edit
