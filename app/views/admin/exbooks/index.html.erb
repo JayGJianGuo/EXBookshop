@@ -1,0 +1,6 @@
+<ul>
+  <% @exbooks.each do |exbook| %>
+
+    <li> <%= link_to(exbook.title, admin_exbook_path(exbook)) %> </li>
+  <% end %>
+</ul>

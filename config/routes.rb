@@ -13,6 +13,7 @@ Rails.application.routes.draw do
         post :return
       end
     end
+    resources :exbooks
   end
 
   resources :products do
