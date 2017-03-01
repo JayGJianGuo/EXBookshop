@@ -38,6 +38,6 @@ class Admin::ExbooksController < ApplicationController
   private
 
   def exbook_params
-    params.require(:exbook).permit(:title, :description, :quantity, :booktype)
+    params.require(:exbook).permit(:title, :description, :quantity, :booktype, :image)
   end
 end
