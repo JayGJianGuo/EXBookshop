@@ -5,7 +5,6 @@ class ExbooksController < ApplicationController
 
   def show
     @exbook = Exbook.find(params[:id])
-    @photos = @exbook.photos.all
   end
 
   def add_to_list

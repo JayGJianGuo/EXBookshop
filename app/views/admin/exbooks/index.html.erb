@@ -18,13 +18,13 @@
     <tr>
       <td><%= exbook.id %></td>
       <td>
-        <%= link_to exbook_path(exbook) do %>
-          <% if exbook.photos.present? %>
-            <%= image_tag(exbook.photos[0].avatar.thumb.url, class: "thumbnail") %>
-          <% else %>
-            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+         <%= link_to exbook_path(exbook) do %>
+            <% if exbook.image.present? %>
+              <%= image_tag(exbook.image.thumb.url, class: "thumbnail") %>
+            <% else %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+            <% end %>
           <% end %>
-        <% end %>
       </td>
       <td><%= exbook.title %></td>
       <td><%= exbook.booktype %></td>

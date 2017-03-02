@@ -16,9 +16,9 @@
   </div>
 
   <div class="group">
-    <%#= f.input :image, as: :file, label: "商品图片" %>
-    <%= f.label :avatar %><br>
-    <%= f.file_field :avatar, :multiple => true, name: "photos[avatar][]" %>
+    <%= f.input :image, as: :file, label: "封面图片" %>
+    <%#= f.label :avatar %>
+    <%#= f.file_field :avatar, :multiple => true, name: "photos[avatar][]" %>
   </div>
 
   <%= f.submit "提交", class: "btn btn-primary pull-right", data: { disable_with: "上传中……" } %>
