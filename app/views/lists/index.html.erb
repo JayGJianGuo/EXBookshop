@@ -2,7 +2,12 @@
   <div class="row">
     <div class="col-md-12">
 
-      <h2> 心愿单 </h2>
+      <h2 class="title-cl-1"> 心愿单 </h2>
+      <%= link_to("清空心愿单", clean_lists_path ,
+               method: :delete , class: "pull-right btn btn-warning",
+               style: "text-decoration: underline;",
+               data: { confirm: "你确定要清空整个心愿单吗？"} )%>
+
 
       <table class="table table-bordered">
         <thead>

@@ -65,5 +65,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :lists
+  resources :lists do
+    collection do
+      delete :clean
+    end
+  end
 end

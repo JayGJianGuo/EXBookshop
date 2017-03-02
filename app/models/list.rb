@@ -8,4 +8,8 @@ class List < ApplicationRecord
      li.quantity = 1
      li.save
    end
+
+   def clean!
+     list_items.destroy_all
+   end
 end
