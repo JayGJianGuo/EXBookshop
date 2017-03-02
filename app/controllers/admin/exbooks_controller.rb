@@ -36,6 +36,12 @@ class Admin::ExbooksController < ApplicationController
     end
   end
 
+  def destroy
+    @exbook = Exbook.find(params[:id])
+    @exbook.destroy
+    redirect_to admin_exbooks_path
+  end
+
   private
 
   def exbook_params

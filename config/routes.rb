@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :products
+    resources :exbooks
+
     resources :orders do
       member do
         post :cancel
@@ -13,7 +15,6 @@ Rails.application.routes.draw do
         post :return
       end
     end
-    resources :exbooks
   end
 
   resources :products do
@@ -63,4 +64,6 @@ Rails.application.routes.draw do
       post :add_to_list
     end
   end
+
+  resources :lists
 end
