@@ -42,7 +42,9 @@
                 <%= list_item.quantity %>
               </td>
               <td>
-
+                 <%= link_to list_item_path(list_item.exbook_id), method: :delete do %>
+                   <i class="fa fa-trash"></i>
+                 <% end %>
               </td>
             </tr>
           <% end %>

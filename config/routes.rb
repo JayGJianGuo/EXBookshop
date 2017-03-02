@@ -70,4 +70,6 @@ Rails.application.routes.draw do
       delete :clean
     end
   end
+
+  resources :list_items
 end
