@@ -39,8 +39,11 @@
                 <%= list_item.exbook.booktype %>
               </td>
               <td>
-                <%= list_item.quantity %>
-              </td>
+                <div class="countNumber">
+                  <%= link_to("-", remove_quantity_list_item_path(list_item.exbook_id), class: "countNumber-btn countNumber-btn-sub", method: :post) %>
+                  <input class="countNumber-input" type="text" value="<%= list_item.quantity %>">
+                  <%= link_to("+", add_quantity_list_item_path(list_item.exbook_id), class: "countNumber-btn countNumber-btn-plus", method: :post) %>
+                </div>
               <td>
                  <%= link_to list_item_path(list_item.exbook_id), method: :delete do %>
                    <i class="fa fa-trash"></i>

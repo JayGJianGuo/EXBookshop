@@ -18,7 +18,11 @@
       <div> 可交换数量 : <%= @exbook.quantity %> </div>
       <div class="exbook-type"> | <%= @exbook.booktype %> </div>
       <div class="pull-right">
-        <%= link_to("加入心愿单", add_to_list_exbook_path(@exbook), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
+        <% if @exbook.quantity.present? && @exbook.quantity > 0 %>
+          <%= link_to("加入心愿单", add_to_list_exbook_path(@exbook), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
+        <% else %>
+          <button class="btn btn-lg btn-default" disabled, style="color: #BA3E35;">已被交换，无法添加</button>
+        <% end %>
       </div>
     </div>
   </div>

@@ -71,5 +71,10 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :list_items
+  resources :list_items do
+    member do
+      post :add_quantity
+      post :remove_quantity
+    end
+  end
 end
