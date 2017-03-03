@@ -4,7 +4,6 @@ class ExordersController < ApplicationController
   def create
     @exorder = Exorder.new(exorder_params)
     @exorder.user = current_user
-    @exorder.total = current_list.total_price
 
     if @exorder.save
       redirect_to exorder_path(@exorder)
