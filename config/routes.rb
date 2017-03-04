@@ -15,6 +15,12 @@ Rails.application.routes.draw do
         post :return
       end
     end
+
+    resources :exorders do
+      member do
+        post :cancel
+      end
+    end
   end
 
   resources :products do
