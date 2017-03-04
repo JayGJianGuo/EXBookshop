@@ -22,11 +22,13 @@ u.is_admin = true
 u.save
 
 
-Product.create!([title: "人类简史",
+Product.create!(title: "人类简史",
                  description: "尤瓦尔·赫拉利",
                  quantity: rand(1..10*10),
-                 price: "41.11",])
+                 price: "41.11")
 
+Photo.create!(product_id: 1,
+              avatar: open("https://ww1.sinaimg.cn/large/006tNbRwly1fdb1d6j44jj30fv0fvju8.jpg"))
 #产生
 Group.create!([title: "《好好学习》精进组",
                description: "成甲",
@@ -52,3 +54,9 @@ Post.create!([title: "你会好好说话吗？",
               content: "你试试你怎么知道",
               group_id: 2,
               user_id: 2, ])
+
+Exbook.create!(title: "未来简史",
+               description: "一本神书",
+               quantity: 3,
+               booktype: "历史&人文",
+               image: open("https://ww1.sinaimg.cn/large/006tNbRwly1fdb1d5b0kaj319e19ex10.jpg"))
