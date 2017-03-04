@@ -7,4 +7,9 @@ class Admin::ExordersController < ApplicationController
   def index
     @exorders = Exorder.order("id DESC")
   end
+
+  def show
+   @exorder = Exorder.find(params[:id])
+   @exbook_lists = @exorder.exbook_lists
+ end
 end
