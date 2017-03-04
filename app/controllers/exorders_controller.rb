@@ -16,6 +16,9 @@ class ExordersController < ApplicationController
         exbook_list.save
       end
 
+      current_list.clean!
+      ExorderMailer.notify_exorder_placed(@exorder).deliver!
+
       redirect_to exorder_path(@exorder.token)
     else
       render 'lists/checkout'
