@@ -3,6 +3,8 @@
 
     <h2> 交换明细 (<%= render_exorder_chose_state(@exorder) %>) </h2>
 
+    <%= render "admin/exorders/state_option", exorder: @exorder %>
+
     <table class="table table-bordered">
       <thead>
         <tr>
