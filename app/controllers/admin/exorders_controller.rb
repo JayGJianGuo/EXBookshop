@@ -22,12 +22,16 @@ class Admin::ExordersController < ApplicationController
   def checked
     @exorder = Exorder.find(params[:id])
     @exorder.checked!
+    ExorderMailer.notify_checked(@exorder).deliver!
+
     redirect_to :back
   end
 
   def cancel
     @exorder = Exorder.find(params[:id])
     @exorder.cancel_exorder!
+    ExorderMailer.notify_cancel(@exorder).deliver!
+
     redirect_to :back
   end
 
