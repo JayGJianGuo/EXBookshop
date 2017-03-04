@@ -49,6 +49,7 @@ Rails.application.routes.draw do
     resources :orders
     resources :groups
     resources :posts
+    resources :exorders
   end
 
   resources :groups do
