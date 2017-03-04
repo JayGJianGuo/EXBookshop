@@ -19,6 +19,9 @@ Rails.application.routes.draw do
     resources :exorders do
       member do
         post :cancel
+        post :exchange
+        post :chose
+        post :checked
       end
     end
   end
