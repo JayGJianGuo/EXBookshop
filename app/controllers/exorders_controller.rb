@@ -27,6 +27,22 @@ class ExordersController < ApplicationController
     @exbook_lists = @exorder.exbook_lists
   end
 
+  def exchange_with_meet
+    @exorder = Exorder.find_by_token(params[:id])
+    @exorder.set_exchange_with!("meet")
+    @exorder.exchange!
+
+    redirect_to exorder_path(@exorder.token), notice: "您已选择进行线下交换"
+  end
+
+  def exchange_with_online
+    @exorder = Exorder.find_by_token(params[:id])
+    @exorder.set_exchange_with!("online")
+    @exorder.exchange!
+
+    redirect_to exorder_path(@exorder.token), notice: "您已选择进行线上交换！"
+  end
+
   private
 
   def exorder_params

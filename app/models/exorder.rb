@@ -13,4 +13,12 @@ class Exorder < ApplicationRecord
   validates :shipping_location, presence: true
 
   has_many :exbook_lists
+
+  def set_exchange_with!(method)
+    self.update_columns(exchange_method: method)
+  end
+
+  def exchange!
+    self.update_columns(is_chose: true)
+  end
 end

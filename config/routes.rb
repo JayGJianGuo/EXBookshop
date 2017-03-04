@@ -80,5 +80,10 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :exorders
+  resources :exorders do
+    member do
+      post :exchange_with_meet
+      post :exchange_with_online
+    end
+  end
 end

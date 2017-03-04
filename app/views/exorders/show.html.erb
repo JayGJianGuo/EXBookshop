@@ -1,67 +1,78 @@
-<div class="row">
-   <div class="col-md-12">
+<div class="container">
+  <div class="row">
+     <div class="col-md-12">
 
-    <h2> 交换清单 </h2>
+      <h2> 交换清单 </h2>
 
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th width="80%">书名</th>
-          <th>类型</th>
-          <th>数量</th>
-        </tr>
-      </thead>
-      <tbody>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th width="80%">书名</th>
+            <th>类型</th>
+            <th>数量</th>
+          </tr>
+        </thead>
+        <tbody>
 
-        <% current_list.list_items.each do |list_item| %>
+          <% current_list.list_items.each do |list_item| %>
+            <tr>
+              <td>
+                <%= link_to(list_item.exbook.title, exbook_path(list_item.exbook)) %>
+              </td>
+              <td>
+                <%= list_item.exbook.booktype %>
+              </td>
+
+              <td>
+                <%= list_item.quantity %>
+              </td>
+
+            </tr>
+          <% end %>
+
+        </tbody>
+      </table>
+
+      <div class="total clearfix">
+        <span class="pull-right">
+          共计 <%= current_list.exbooks.count %> 本
+        </span>
+      </div>
+
+      <hr>
+
+      <h2> 订单资讯 </h2>
+
+      <table class="table table-striped table-bordered">
+        <tbody>
           <tr>
             <td>
-              <%= link_to(list_item.exbook.title, exbook_path(list_item.exbook)) %>
+              订购人
             </td>
-            <td>
-              <%= list_item.exbook.booktype %>
-            </td>
-
-            <td>
-              <%= list_item.quantity %>
-            </td>
-
           </tr>
+          <tr>
+            <td>
+              <%= @exorder.shipping_name %> - <%= @exorder.shipping_wechat %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <%= @exorder.shipping_phone %> - <%= @exorder.shipping_location %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      </div>
+
+      <hr>
+        <% if !@exorder.is_chose? %>
+          <div class="group pull-right btn-group">
+            <%= link_to("线下交换", exchange_with_meet_exorder_path(@exorder.token), method: :post, class: "btn btn-info") %>
+            <%= link_to("邮寄交换", exchange_with_online_exorder_path(@exorder.token), method: :post, class: "btn btn-success") %>
+          </div>
+        <% else %>
+          <p class="text-center">您已选择交换方式</p>
         <% end %>
-
-      </tbody>
-    </table>
-
-    <div class="total clearfix">
-      <span class="pull-right">
-        共计 <%= current_list.exbooks.count %> 本
-      </span>
-    </div>
-
-    <hr>
-
-    <h2> 订单资讯 </h2>
-
-    <table class="table table-striped table-bordered">
-      <tbody>
-        <tr>
-          <td>
-            订购人
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <%= @exorder.shipping_name %> - <%= @exorder.shipping_wechat %>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <%= @exorder.shipping_phone %> - <%= @exorder.shipping_location %>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-    </div>
   </div>
 </div>
