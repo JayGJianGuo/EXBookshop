@@ -34,6 +34,7 @@ class ExordersController < ApplicationController
     @exorder = Exorder.find_by_token(params[:id])
     @exorder.set_exchange_with!("meet")
     @exorder.exchange!
+    @exorder.exchange_happen!
 
     redirect_to exorder_path(@exorder.token), notice: "您已选择进行线下交换"
   end
@@ -42,6 +43,7 @@ class ExordersController < ApplicationController
     @exorder = Exorder.find_by_token(params[:id])
     @exorder.set_exchange_with!("online")
     @exorder.exchange!
+    @exorder.exchange_happen!
 
     redirect_to exorder_path(@exorder.token), notice: "您已选择进行线上交换！"
   end

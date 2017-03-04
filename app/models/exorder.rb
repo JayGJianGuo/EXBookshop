@@ -21,4 +21,29 @@ class Exorder < ApplicationRecord
   def exchange!
     self.update_columns(is_chose: true)
   end
+
+  include AASM
+
+  aasm do
+    state :exorder_wating_check, initial: true
+    state :chose
+    state :checked
+    state :exorder_cancelled
+
+    event :exchange_happen, after_commit: :exchange! do
+      transitions from: :exorder_wating_check, to: :chose
+    end
+
+    event :chose do
+      transitions from: :chose,  to: :checked
+    end
+
+    event :checked do
+      transitions from: :checked, to: :exorder_cancelled
+    end
+
+    event :cancel_order do
+      transitions from: [:exorder_wating_check, :chose], to: :exorder_cancelled
+    end
+  end
 end
