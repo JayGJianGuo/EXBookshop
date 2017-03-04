@@ -19,6 +19,9 @@
                 checked_admin_exorder_path(exorder),
                 class: "btn btn-default btn-sm", method: :post) %>
 
+  <% when "exorder_done" %>
+    <span class="label label-success">Exchange Done</span>
+
   <% when "exorder_cancelled" %>
     <span class="label label-default">订单已取消</span>
 

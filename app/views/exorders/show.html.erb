@@ -14,19 +14,17 @@
         </thead>
         <tbody>
 
-          <% current_list.list_items.each do |list_item| %>
+          <% @exbook_lists.each do |exbook_list| %>
             <tr>
               <td>
-                <%= link_to(list_item.exbook.title, exbook_path(list_item.exbook)) %>
+                <%= exbook_list.exbook_name %>
               </td>
               <td>
-                <%= list_item.exbook.booktype %>
+                <%= exbook_list.exbook_booktype %>
               </td>
-
               <td>
-                <%= list_item.quantity %>
+                <%= exbook_list.quantity %>
               </td>
-
             </tr>
           <% end %>
 
@@ -64,7 +62,11 @@
       </table>
 
       </div>
-
+      <div class="pull-left">
+        <% if @exorder.exorder_wating_check? || @exorder.chose? %>
+          <%= link_to("申请取消订单", apply_to_cancel_exorder_path(@exorder), method: :post, class: "btn  btn-info") %>
+        <% end %>
+      </div>
       <hr>
         <% if !@exorder.is_chose? %>
           <div class="group pull-right btn-group">

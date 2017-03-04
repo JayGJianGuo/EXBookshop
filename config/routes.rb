@@ -93,6 +93,7 @@ Rails.application.routes.draw do
     member do
       post :exchange_with_meet
       post :exchange_with_online
+      post :apply_to_cancel
     end
   end
 end

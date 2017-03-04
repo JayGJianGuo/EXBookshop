@@ -29,6 +29,7 @@ class Exorder < ApplicationRecord
     state :chose
     state :checked
     state :exorder_cancelled
+    state :exorder_done
 
     event :exchange_happen, after_commit: :exchange! do
       transitions from: :exorder_wating_check, to: :chose
@@ -39,7 +40,7 @@ class Exorder < ApplicationRecord
     end
 
     event :checked do
-      transitions from: :checked, to: :exorder_cancelled
+      transitions from: :checked, to: :exorder_done
     end
 
     event :cancel_order do

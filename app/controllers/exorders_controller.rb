@@ -48,6 +48,14 @@ class ExordersController < ApplicationController
     redirect_to exorder_path(@exorder.token), notice: "您已选择进行线上交换！"
   end
 
+  def apply_to_cancel
+    @exorder = Exorder.find(params[:id])
+    ExorderMailer.apply_cancel(@exorder).deliver!
+    flash[:notice] = "已提交申请"
+    redirect_to :back
+  end
+
+
   private
 
   def exorder_params
