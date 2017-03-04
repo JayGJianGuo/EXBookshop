@@ -1,4 +1,10 @@
 class Exorder < ApplicationRecord
+  before_create :generate_token
+
+  def generate_token
+    self.token = SecureRandom.uuid
+  end
+
   belongs_to :user
 
   validates :shipping_name, presence: true

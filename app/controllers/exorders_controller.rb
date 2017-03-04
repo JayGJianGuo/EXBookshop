@@ -16,14 +16,14 @@ class ExordersController < ApplicationController
         exbook_list.save
       end
 
-      redirect_to exorder_path(@exorder)
+      redirect_to exorder_path(@exorder.token)
     else
       render 'lists/checkout'
     end
   end
 
   def show
-    @exorder = Exorder.find(params[:id])
+    @exorder = Exorder.find_by_token(params[:id])
     @exbook_lists = @exorder.exbook_lists
   end
 
