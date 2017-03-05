@@ -16,7 +16,7 @@
         <% current_list.list_items.each do |list_item| %>
           <tr>
             <td>
-              <%= link_to(list_item.exbook.title, exbook_path(list_item.exbook)) %>
+              《<%= link_to(list_item.exbook.title, exbook_path(list_item.exbook)) %>》
             </td>
             <td>
               <%= list_item.exbook.booktype %>
