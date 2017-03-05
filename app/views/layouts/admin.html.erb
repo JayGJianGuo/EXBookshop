@@ -10,15 +10,16 @@
     <div class="container">
       <%= render 'common/navbar' %>
       <div class="row">
-        <div class="col-md-1">
+        <div class="col-md-2">
           <ul class="nav nav-pills nav-stacked text-center" style="max-width: 400px;">
-            <li><%= link_to("商品", admin_products_path) %></li>
-            <li><%= link_to("订单", admin_orders_path) %></li>
-            <li><%= link_to("书架", admin_exbooks_path) %></li>
-            <li><%= link_to("交换单", admin_exorders_path) %></li>
+            <li><%= link_to("闲书列表", admin_products_path, class: "btn btn-primary") %></li>
+            <li><%= link_to("订单", admin_orders_path, class: "btn btn-primary") %></li>
+            <br>
+            <li><%= link_to("Exbook·列表", admin_exbooks_path, class: "btn btn-info") %></li>
+            <li><%= link_to("交换单", admin_exorders_path, class: "btn btn-info") %></li>
           </ul>
         </div>
-        <div class="col-md-11">
+        <div class="col-md-10">
           <%= yield %>
         </div>
       </div>

@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <h2 class="pull-left title-cl-1">书架</h2>
+    <h2 class="pull-left title-cl-1">Exchange·书库</h2>
 
     <div class="pull-right">
 
@@ -9,17 +9,17 @@
   </div>
   <br>
   <div class="row">
-    <% @exbooks.each do |exbook| %>
-      <div class="col-xs-3 col-md-3">
-        <%= link_to exbook_path(exbook) do %>
-          <% if exbook.image.present? %>
-            <%= image_tag(exbook.image.thumb.url, class: "thumbnail") %>
-          <% else %>
-            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+      <% @exbooks.each do |exbook| %>
+        <div class="col-xs-3 col-md-3 exbook-index">
+          <%= link_to exbook_path(exbook) do %>
+            <% if exbook.image.present? %>
+              <%= image_tag(exbook.image.thumb.url, class: "thumbnail") %>
+            <% else %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+            <% end %>
           <% end %>
-        <% end %>
-        <%= exbook.title %> | <%= exbook.booktype %>
-      </div>
-    <% end %>
+          <%= exbook.title %> | <%= exbook.booktype %>
+        </div>
+      <% end %>
   </div>
 </div>

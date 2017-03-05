@@ -14,14 +14,17 @@
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
               <li>
-                <%= link_to("书城", products_path) %>
+                <%= link_to("Exchange·书库", exbooks_path) %>
               </li>
+
+              <li>
+                <%= link_to("Idle·书城", products_path) %>
+              </li>
+
               <li>
                 <%= link_to("书吧", groups_path) %>
               </li>
-              <li>
-                <%= link_to("书架", exbooks_path) %>
-              </li>
+
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
@@ -52,10 +55,7 @@
 
                 <% if current_user.admin? %>
                   <li>
-                    <%= link_to(content_tag(:i, "商家后台", class: "fa fa-list-ul"), admin_products_path) %>
-                  </li>
-                  <li>
-                    <%= link_to(content_tag(:i, "书架后台", class: "fa fa-book"), admin_exbooks_path) %>
+                    <%= link_to(content_tag(:i, "管理后台", class: "fa fa-list-ul"), admin_products_path) %>
                   </li>
                 <% end %>
 
@@ -64,15 +64,7 @@
                 </li>
 
                 <li>
-                  <%= link_to(content_tag(:i, "交换清单", class: "fa fa-shopping-basket"), account_exorders_path) %>
-                </li>
-
-                <li>
-                  <%= link_to(content_tag(:i, "我的群组", class: "fa fa-users"), account_groups_path) %>
-                </li>
-
-                <li>
-                  <%= link_to(content_tag(:i, "我的文章", class: "fa fa-paperclip"), account_posts_path) %>
+                  <%= link_to(content_tag(:i, "交换清单", class: "fa fa-server"), account_exorders_path) %>
                 </li>
 
                 <li> <%= link_to(content_tag(:i, "登出", class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
@@ -84,6 +76,7 @@
         </div><!-- /.nav-collapse -->
     </div><!-- /.container -->
 </nav><!-- /.navbar -->
+<div style="margin-bottom:100px;"></div>
 
 
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">

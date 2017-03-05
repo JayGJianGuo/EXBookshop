@@ -3,7 +3,15 @@
     <div class="col-md-12">
       <div class="group">
         <h2 class="pull-left title-cl-1">书吧</h2>
-        <%= link_to("兴趣组", new_group_path, class: "btn btn-primary btn-lg pull-right fa fa-plus-circle") %>
+        <div class="pull-right">
+
+            <%= link_to("兴趣组", new_group_path, class: "btn btn-primary btn-lg pull-right fa fa-plus-circle") %>
+            
+            <%= link_to("我的群组", account_groups_path, class: "fa fa-users btn btn-lg btn-info") %>
+
+            <%= link_to("我的文章", account_posts_path, class: "fa fa-paperclip btn btn-lg btn-success") %>
+
+        </div>
       </div>
       <div class="row">
         <div class="container text-center">
