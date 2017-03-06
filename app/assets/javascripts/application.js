@@ -17,7 +17,6 @@
 //= require_tree .
 
 
-
 $(document).ready(function(){
 
 /**
@@ -95,4 +94,10 @@ window.onscroll = function(e) {
  * could be load with scroll down set.
  */
 offSetManager();
+  
+  $('#myCarousel').carousel({
+    interval: 2000 //目前是2秒播放一张，可以根据需要调整这个值
+  })
+  
 });
+
