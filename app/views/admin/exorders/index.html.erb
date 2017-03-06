@@ -1,0 +1,25 @@
+  <div class="row">
+    <h2 class="title-cl-1 text-center">交换单·列表 </h2>
+  </div>
+  <br>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th class="col-md-2 col-xs-2">编号</th>
+          <th class="col-md-2 col-xs-2">生成时间</th>
+          <th class="col-md-4 col-xs-4">订购者</th>
+          <th class="col-md-4 col-md-4">订单状态</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @exorders.each do |exorder| %>
+        <tr>
+          <td> <%= link_to(exorder.id, admin_exorder_path(exorder) ) %> </td>
+          <td> <%= exorder.created_at.to_s(:long) %> </td>
+          <td> <%= exorder.user.email %></td>
+          <td> <%= exorder.aasm_state %> </td>
+        </tr>
+        <% end %>
+
+      </tbody>
+    </table>

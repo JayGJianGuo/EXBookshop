@@ -1,0 +1,30 @@
+<div style="padding:10px; float:right;">
+
+  <% case exorder.aasm_state %>
+  <% when "exchange_wating_check" %>
+    <%= link_to("取消交换单",
+                cancel_admin_exorder_path(exorder),
+                class: "btn btn-default btn-sm", method: :post) %>
+
+  <% when "chose" %>
+    <%= link_to("取消订单",
+                cancel_admin_exorder_path(exorder),
+                class: "btn btn-default btn-sm", method: :post) %>
+    <%= link_to("确认交换",
+                chose_admin_exorder_path(exorder),
+                class: "btn btn-default btn-sm", method: :post) %>
+
+  <% when "checked" %>
+    <%= link_to("已完成信息交换",
+                checked_admin_exorder_path(exorder),
+                class: "btn btn-default btn-sm", method: :post) %>
+
+  <% when "exorder_done" %>
+    <span class="label label-success">Exchange Done</span>
+
+  <% when "exorder_cancelled" %>
+    <span class="label label-default">订单已取消</span>
+
+  <% end %>
+
+</div>

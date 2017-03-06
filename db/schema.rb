@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170302012509) do
+ActiveRecord::Schema.define(version: 20170304100459) do
 
   create_table "cart_items", force: :cascade do |t|
     t.integer  "cart_id"
@@ -25,6 +25,15 @@ ActiveRecord::Schema.define(version: 20170302012509) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "exbook_lists", force: :cascade do |t|
+    t.integer  "exorder_id"
+    t.string   "exbook_name"
+    t.integer  "exbook_booktype"
+    t.integer  "quantity"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
   create_table "exbooks", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
@@ -33,6 +42,22 @@ ActiveRecord::Schema.define(version: 20170302012509) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "image"
+  end
+
+  create_table "exorders", force: :cascade do |t|
+    t.integer  "total",             default: 0
+    t.integer  "user_id"
+    t.string   "shipping_name"
+    t.string   "shipping_wechat"
+    t.string   "shipping_location"
+    t.string   "shipping_phone"
+    t.datetime "created_at",                                         null: false
+    t.datetime "updated_at",                                         null: false
+    t.string   "token"
+    t.boolean  "is_chose",          default: false
+    t.string   "exchange_method"
+    t.string   "aasm_state",        default: "exorder_wating_check"
+    t.index ["aasm_state"], name: "index_exorders_on_aasm_state"
   end
 
   create_table "group_relationships", force: :cascade do |t|

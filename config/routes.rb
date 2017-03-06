@@ -15,6 +15,15 @@ Rails.application.routes.draw do
         post :return
       end
     end
+
+    resources :exorders do
+      member do
+        post :cancel
+        post :exchange
+        post :chose
+        post :checked
+      end
+    end
   end
 
   resources :products do
@@ -49,6 +58,7 @@ Rails.application.routes.draw do
     resources :orders
     resources :groups
     resources :posts
+    resources :exorders
   end
 
   resources :groups do
@@ -68,6 +78,7 @@ Rails.application.routes.draw do
   resources :lists do
     collection do
       delete :clean
+      post :checkout
     end
   end
 
@@ -75,6 +86,14 @@ Rails.application.routes.draw do
     member do
       post :add_quantity
       post :remove_quantity
+    end
+  end
+
+  resources :exorders do
+    member do
+      post :exchange_with_meet
+      post :exchange_with_online
+      post :apply_to_cancel
     end
   end
 end

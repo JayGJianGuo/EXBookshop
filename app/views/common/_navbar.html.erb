@@ -1,89 +1,82 @@
-<nav class="navbar navbar-default navbar-static-top header-fixed" role="navigation">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="nav-main">
-
-    <div class="navbar-header">
-      <a href="/" class="navbar-brand"><img src='<%= image_url 'https://ww2.sinaimg.cn/large/006tKfTcgy1fd0i95sivcj303k03kt8j.jpg' %>' >EX·Bookshop</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li>
-          <%= link_to("书城", products_path) %>
-        </li>
-        <li>
-          <%= link_to("书吧", groups_path) %>
-        </li>
-        <li>
-          <%= link_to("书架", exbooks_path) %>
-        </li>
-      </ul>
-
-      <ul class="nav navbar-nav navbar-right">
-
-        <li>
-          <%= link_to lists_path do  %>
-           心愿单 <i class="fa fa-book"> </i> ( <%= current_list.exbooks.count %> )
-          <% end %>
-       </li>
-
-        <li>
-          <%= link_to carts_path do %>
-            购物车 <i class="fa fa-shopping-cart"></i>  ( <%= current_cart.products.count %> )
-          <% end %>
-        </li>
-
-        <% if !current_user %>
-            <li><a href="#" data-toggle="modal" data-target="#signup-modal">注册</a></li>
-            <li><a href="#" class='fa fa-sign-in' data-toggle="modal" data-target="#login-modal">登入</a></li>
-        <% else %>
-
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Hello, <%= current_user.email %>
-              <b class="caret"></b>
-          </a>
-          <ul class="dropdown-menu">
-
-          <% if current_user.admin? %>
-            <li>
-              <%= link_to(content_tag(:i, "商家后台", class: "fa fa-list-ul"), admin_products_path) %>
-            </li>
-            <li>
-              <%= link_to(content_tag(:i, "书架后台", class: "fa fa-book"), admin_exbooks_path) %>
-            </li>
-          <% end %>
-
-          <li>
-            <%= link_to(content_tag(:i, "订单列表", class: "fa fa-shopping-basket"), account_orders_path) %>
-          </li>
-
-          <li>
-            <%= link_to(content_tag(:i, "我的群组", class: "fa fa-users"), account_groups_path) %>
-          </li>
-
-          <li>
-            <%= link_to(content_tag(:i, "我的文章", class: "fa fa-paperclip"), account_posts_path) %>
-          </li>
-
-          <li> <%= link_to(content_tag(:i, "登出", class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
-
-          </ul>
-        </li>
-        <% end %>
-      </ul>
-
-    </div>
 
 
-    </div>
-    <!-- /.navbar-collapse-->
-  </div>
-  <!-- /.container-fluid -->
-</nav>
-<div class="header-navbar"></div>
+<nav id="header" class="navbar navbar-fixed-top">
+    <div id="header-container" class="container navbar-container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a id="brand" class="navbar-brand title-cl-1" href="/"><img src='<%= image_url 'https://ww2.sinaimg.cn/large/006tKfTcgy1fd0i95sivcj303k03kt8j.jpg' %>' >EX·Bookshop</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav title-cl-1">
+              <li>
+                <%= link_to("Exchange·书库", exbooks_path) %>
+              </li>
+
+              <li>
+                <%= link_to("Idle·书城", products_path) %>
+              </li>
+
+              <li>
+                <%= link_to("书吧", groups_path) %>
+              </li>
+
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right title-cl-1">
+
+              <li>
+                <%= link_to lists_path do  %>
+                 心愿单 <i class="fa fa-book"> </i> ( <%= current_list.exbooks.count %> )
+                <% end %>
+             </li>
+
+              <li>
+                <%= link_to carts_path do %>
+                  购物车 <i class="fa fa-shopping-cart"></i>  ( <%= current_cart.products.count %> )
+                <% end %>
+              </li>
+
+              <% if !current_user %>
+                  <li><a href="#" data-toggle="modal" data-target="#signup-modal">注册</a></li>
+                  <li><a href="#" class='fa fa-sign-in' data-toggle="modal" data-target="#login-modal">登入</a></li>
+              <% else %>
+
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Hello, <%= current_user.email %>
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+
+                <% if current_user.admin? %>
+                  <li>
+                    <%= link_to(content_tag(:i, "管理后台", class: "fa fa-list-ul"), admin_products_path) %>
+                  </li>
+                <% end %>
+
+                <li>
+                  <%= link_to(content_tag(:i, "订单列表", class: "fa fa-shopping-basket"), account_orders_path) %>
+                </li>
+
+                <li>
+                  <%= link_to(content_tag(:i, "交换清单", class: "fa fa-server"), account_exorders_path) %>
+                </li>
+
+                <li> <%= link_to(content_tag(:i, "登出", class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
+
+                </ul>
+              </li>
+              <% end %>
+            </ul>
+        </div><!-- /.nav-collapse -->
+    </div><!-- /.container -->
+</nav><!-- /.navbar -->
+<div style="margin-bottom:100px;"></div>
 
 
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
