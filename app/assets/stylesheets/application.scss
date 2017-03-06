@@ -20,6 +20,7 @@
 
 
 
+/*导航栏*/
 
 .navbar-brand {
     font-size: 24px;
@@ -60,22 +61,16 @@
     height: 32px; //定制图片高度
 }
 
-
-
-
-
-
-/*导航栏*/
+.navbar-nav {
+  .title-cl-1{
+    color: #73AEEA;
+  }
+}
 @media (min-width: 768px) {
     .navbar .footer .alert{
         border-radius: 0;//圆角为0
     }
 }
-
-
-
-
-
 
 .header-fixed {
   position: fixed;
@@ -280,7 +275,7 @@
 */
 /*大标题*/
 .title-cl-1 {
-  color: #337AB7;
+  color: #73AEEA;
 }
 
 
