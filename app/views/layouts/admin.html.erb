@@ -10,7 +10,7 @@
     <div class="container">
       <%= render 'common/navbar' %>
       <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-2 col-sm-12 col-xs-12">
           <ul class="nav nav-pills nav-stacked text-center" style="max-width: 400px;">
             <li><%= link_to("闲书列表", admin_products_path, class: "btn btn-primary") %></li>
             <li><%= link_to("订单", admin_orders_path, class: "btn btn-primary") %></li>
@@ -19,7 +19,7 @@
             <li><%= link_to("交换单", admin_exorders_path, class: "btn btn-info") %></li>
           </ul>
         </div>
-        <div class="col-md-10">
+        <div class="col-md-10 col-sm-12 col-xs-12">
           <%= yield %>
         </div>
       </div>
