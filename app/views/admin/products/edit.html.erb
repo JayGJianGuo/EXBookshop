@@ -15,6 +15,10 @@
     <%= f.input :price, label: "单价" %>
   </div>
 
+  <div class="group">
+    <%= f.association :size %>
+  </div>
+
   <% if @product.image.present? %>
     <span>目前商品图</span> <br>
     <% @product.photos.each do |p| %>
